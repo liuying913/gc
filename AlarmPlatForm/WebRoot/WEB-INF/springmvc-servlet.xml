@@ -1,0 +1,133 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.2.xsd
+        "
+    
+        default-autowire="byName">
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	
+	<!-- 为了简化Handler配置，建议使用组件扫描指定的包 -->
+	<context:component-scan base-package="com.highfd"></context:component-scan>
+	<bean id="sys" class="com.highfd.sys.controller.ContextUtils"/>
+	
+	
+	<!-- 为了简化Handler配置，建议使用组件扫描指定的包 -->
+	<context:component-scan base-package="com.highfd"></context:component-scan>
+	
+	
+ 	<task:annotation-driven /> <!--定时器开关   -->
+ 	
+ 	<!-- sms 短信模块  定时器 -->
+    <bean id="smsTask" class="com.highfd.sms.controller.SmsSendController"></bean>  
+    <task:scheduled-tasks>
+        <task:scheduled ref="smsTask" method="activeWX" cron="0 0/10 9-16 * * ?" />  
+    </task:scheduled-tasks>
+    
+    <task:scheduled-tasks>
+        <task:scheduled ref="smsTask" method="dayClean" cron="0 40 23 * * ?" />  
+    </task:scheduled-tasks>
+    
+    <task:scheduled-tasks>
+        <task:scheduled ref="smsTask" method="mondayFlag" cron="0 20 08 * * ?" />  
+    </task:scheduled-tasks>
+    
+    
+    <!-- teqc 数据计算模块  定时器 -->
+    <!-- <bean id="teqcTask" class="com.highfd.teqc.controller.TEQCController"></bean>  
+    <task:scheduled-tasks>
+        <task:scheduled ref="teqcTask" method="everyStartTask" cron="0 30 08 * * ?" />  
+    </task:scheduled-tasks> -->
+    
+    
+    <!-- 第二种定时器 demo
+    <bean id="crawTask" class="com.highfd.task.TestCrawTask"></bean>  
+    <task:scheduled-tasks>
+        <task:scheduled ref="crawTask" method="show" cron="*/5 * * * * ?" />  
+        <task:scheduled ref="crawTask" method="print" cron="*/10 * * * * ?"/>  
+    </task:scheduled-tasks> 
+	<bean id="CrawTask" class="com.highfd.controller.CrawTaskForXMLAnnotation"></bean>  
+    <task:scheduled-tasks>
+        <task:scheduled ref="CrawTask" method="crawOneHour" cron="0 */3600 * * * ?" />  
+    </task:scheduled-tasks> -->
+        
+	<!-- 注解映射器 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+	<!-- 注解适配器 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+	<!-- mvc:annotation-driven  可以代替上面两个配置信息  并默认加载了很多参数的绑定方法，例如json转换解析器等-->
+	<!-- <mvc:annotation-driven></mvc:annotation-driven> -->
+	
+	<!-- 视图解析器 解析jsp文件 默认jstl标签 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<!-- 数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${driverClassName}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="maxActive" value="${maxActive}" />
+		<property name="maxIdle"   value="${maxIdle}" />
+		<property name="maxWait"   value="${maxWait}" />
+	</bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+     <property name="dataSource" ref="dataSource"/>  
+    </bean> 
+    
+    
+    <!-- alarm 报警模块注入 -->
+     <bean id="AlarmDaoImpl" class="com.highfd.alarm.dao.impl.AlarmDaoImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+    
+    <!-- teqc 报警模块注入 -->
+     <bean id="TEQCDaoImpl" class="com.highfd.teqc.dao.impl.TEQCDaoImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+    
+    
+    <!-- sms 短信模块注入 -->
+    <bean id="SiteDAOImpl" class="com.highfd.sms.dao.impl.SiteDAOImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+    <bean id="SmsDaoImpl" class="com.highfd.sms.dao.impl.SmsDaoImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+    
+     <!-- siteUser 用户人员管理 -->
+    <bean id="SiteUserDaoImpl" class="com.highfd.siteUser.dao.impl.SiteUserDaoImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+    
+    <!-- sys 系统模块注入 -->
+    <bean id="CrawTimerDAOImpl" class="com.highfd.sys.dao.impl.CrawTimerDAOImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+    <bean id="HighFDDaoImpl" class="com.highfd.sys.dao.impl.HighFDDaoImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+    <bean id="ItemDAOImpl" class="com.highfd.sys.dao.impl.ItemDAOImpl">  
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
+    </bean>
+    
+   
+</beans>

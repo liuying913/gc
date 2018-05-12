@@ -11,8 +11,8 @@
 						  <li><a href="/AlarmPlatForm/skip.action?pageName=1">主页</a>|</li>
                           <li><a href="/AlarmPlatForm/skip.action?pageName=2">平台简介</a>|</li>
                           <!--<li><a href="/AlarmPlatForm/skip.action?pageName=3">新闻动态</a>|</li> -->
-                          <li><a href="/AlarmPlatForm/skip.action?pageName=4">帮助</a>|</li>
-                          <li><a href="/AlarmPlatForm/skip.action?pageName=5">关于我们</a></li>
+                          <li><a href="/AlarmPlatForm/skip.action?pageName=4">帮助</a></li><!--
+                          <li><a href="/AlarmPlatForm/skip.action?pageName=5">关于我们</a></li>-->
                       </ul>
                   </div>
               </div>

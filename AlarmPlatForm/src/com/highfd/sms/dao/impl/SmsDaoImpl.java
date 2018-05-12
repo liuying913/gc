@@ -37,7 +37,7 @@ public class SmsDaoImpl implements SmsDao{
 	/**
 	 * 插入报警日志信息
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked"})
 	public void insertSmsInfo(final SmsInfo info) {
 		try{
 			String sql = "INSERT INTO sms_INFO2 (id,sitenumber,eventId,phone,smsContent,isFlag,createTime)VALUES(SMS_INFO_SEQ.nextval,?,?,?,?,?,?)";

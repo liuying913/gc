@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div id="menu">
 	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_10"><a href="/AlarmPlatForm/skip.action?pageName=2" class="active">平台简介</a></h1>
 	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_11"><a href="/AlarmPlatForm/skip.action?pageName=21">中心简介</a></h1>
-	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_12"><a href="/AlarmPlatForm/skip.action?pageName=22">共享理念</a></h1>
+	        <!--<h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_12"><a href="/AlarmPlatForm/skip.action?pageName=22">共享理念</a></h1>-->
         </div>
 		
      </div>

@@ -23,8 +23,8 @@ public class SiteInfo {
 	 */
 	private String siteType;//1：基准站 ，2：其他站
 	
-	private String smsPhone;//发送的电话号码
-	private String smsPerson;//发送的人名
+	private String site_phone;//发送的电话号码
+	private String site_person;//发送的人名
 	
 	private String zoneCode;
 	private String zoneName;
@@ -117,11 +117,11 @@ public class SiteInfo {
 	public void setSiteCategory(String siteCategory) {
 		this.siteCategory = siteCategory;
 	}
-	public String getSmsPerson() {
-		return smsPerson;
+	public String getSite_person() {
+		return site_person;
 	}
-	public void setSmsPerson(String smsPerson) {
-		this.smsPerson = smsPerson;
+	public void setSite_person(String sitePerson) {
+		site_person = sitePerson;
 	}
 	public String getSiteUnit() {
 		return siteUnit;
@@ -213,11 +213,11 @@ public class SiteInfo {
 	public SiteInfo() {
 		super();
 	}
-	public String getSmsPhone() {
-		return smsPhone;
+	public String getSite_phone() {
+		return site_phone;
 	}
-	public void setSmsPhone(String smsPhone) {
-		this.smsPhone = smsPhone;
+	public void setSite_phone(String sitePhone) {
+		site_phone = sitePhone;
 	}
 	public String getSiteDepartment() {
 		return siteDepartment;

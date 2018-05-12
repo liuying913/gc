@@ -256,7 +256,7 @@ import com.highfd.siteUser.model.SiteInfo;
 			sql.append(" order by e.starttime desc");
 			sql.append(") A ) WHERE RN between "+((pageinfo.getCurrentPage()-1)*pageinfo.getPageSize() + 1)+" and "+(pageinfo.getCurrentPage()*pageinfo.getPageSize())+"");
 	System.out.println(sql);
-			@SuppressWarnings({ "unchecked", "rawtypes"})
+			@SuppressWarnings({ "unchecked"})
 			List<AlarmInfo> eventInfoList = jdbcTemplate.query(sql.toString(), new RowMapper(){
 				public Object mapRow(ResultSet rs, int arg1) throws SQLException {
 					AlarmInfo info = new AlarmInfo();

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.highfd.siteUser.dao.SiteUserDao;
 import com.highfd.siteUser.model.SiteInfo;
+import com.highfd.siteUser.model.ZoneInfo;
 import com.highfd.siteUser.service.SiteUserService;
 
 @Service
@@ -34,5 +35,8 @@ public class SiteUserServiceImpl implements SiteUserService {
 		dao.updateBaseSiteInfo(siteInfo);
 	}
 	
-
+	 //获得  省份  列表
+    public List<ZoneInfo>  getZoneInfoList(){
+    	return dao.getZoneInfoList();
+    }
 }

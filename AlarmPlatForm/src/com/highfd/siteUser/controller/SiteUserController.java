@@ -2,6 +2,7 @@ package com.highfd.siteUser.controller;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.highfd.common.Excerl.ExcelStyle;
 import com.highfd.siteUser.model.SiteInfo;
+import com.highfd.siteUser.model.ZoneInfo;
 import com.highfd.siteUser.service.SiteUserService;
 
 /**
@@ -59,10 +61,22 @@ public class SiteUserController {
 	//获得站点列表
 	@RequestMapping(value = "/getSiteInfoList", produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
-	public String getSiteInfoList(HttpServletRequest request) {
+	public String getSiteInfoList(HttpServletRequest request) throws UnsupportedEncodingException {
 		String searchParam = request.getParameter("searchParam");
+		//String str = new String(searchParam.getBytes("ISO8859-1"),"utf-8");   
+		//System.out.println(searchParam+" | "+str);
+		System.out.println("查询参数："+searchParam);
 		List<SiteInfo> siteInfoList = siteUserService.getSiteInfoList(searchParam);
 		JSONArray json = JSONArray.fromObject(siteInfoList);
+		return json.toString();
+	}
+	
+	//获得省份列表
+	@RequestMapping(value = "/getZoneInfoList", produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public String getZoneInfoList(HttpServletRequest request) {
+		List<ZoneInfo> zoneInfoList = siteUserService.getZoneInfoList();
+		JSONArray json = JSONArray.fromObject(zoneInfoList);
 		return json.toString();
 	}
 	
@@ -139,8 +153,8 @@ public class SiteUserController {
 	             ExcelStyle.setDataCell(row,cell, info.getSiteName(), dayNumber++,workbook);
 	             ExcelStyle.setDataCell(row,cell, info.getSiteNumber(),dayNumber++, workbook);
 	             
-	             ExcelStyle.setDataCell(row,cell, info.getSmsPerson(), dayNumber++,workbook);
-	             ExcelStyle.setDataCell(row,cell, info.getSmsPhone(), dayNumber++,workbook);
+	             ExcelStyle.setDataCell(row,cell, info.getSite_person(), dayNumber++,workbook);
+	             ExcelStyle.setDataCell(row,cell, info.getSite_phone(), dayNumber++,workbook);
 	         }
 	        
 	         fOut = response.getOutputStream();  

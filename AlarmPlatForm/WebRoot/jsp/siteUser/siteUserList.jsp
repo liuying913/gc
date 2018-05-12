@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>短信发布平台</title>
 	<link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/css.css" />
-        <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/drop-down.css" />
+    <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/drop-down.css" />
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/qd.css"/>
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/pcgzs.css" />
@@ -73,7 +73,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body>
 	<%@ include file="../../head.jsp" %>
-	
     <div class="banner_son">
 		<img src="/AlarmPlatForm/img/img_zxjj.jpg" style="margin:-350px 0px;"/>
     </div>
@@ -113,6 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					   <th style="white-space: nowrap;">台站编号</th>
 					   <th style="white-space: nowrap;">联系人</th>
 					   <th style="white-space: nowrap;">联系方式</th>
+					   <th style="white-space: nowrap;">编辑</th>
 				   </tr>
 				   <tbody id="tbody">
 				   </tbody>
@@ -148,7 +148,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			shua();
 			page();
 			
-			
 			/*修改select的默认方式*/
             $("#userId").selectWidget({
                 change  : function (changes) {
@@ -168,13 +167,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    $.each(data, function(key, value) {
 	    	if( key>=(shu-1)*num_value && key< shu*num_value){
     			if(key%2!=0){
+    			
+    				//if(title.length>22){
+	                //	 title= title.substring(0,22)+"...";
+	                // }
     				str=str+"<tr class='even'>"
     				+"	    <td>"+value.rm+"</td>"
     				+"	    <td>"+value.zoneName+"</td>"
     				+"	    <td>"+value.siteName+"</td>"
     				+"	    <td>"+value.siteNumber+"</td>"
-    				+"	    <td>"+value.smsPerson+"</td>"
-    				+"	    <td>"+value.smsPhone+"</td>"
+    				+"	    <td>"+value.site_person+"</td>"
+    				+"	    <td>"+value.site_phone+"</td>"
+    				+"	    <td><a href='/AlarmPlatForm/jsp/siteUser/showSiteInfo.jsp?siteNumber="+value.siteNumber+"'>查看</a>&nbsp;<a href='/AlarmPlatForm/jsp/siteUser/updateSiteInfo.jsp?siteNumber="+value.siteNumber+"'>编辑</a></td>"
     				+"    </tr>";
     			}else{
     				str=str+"<tr>"
@@ -182,8 +186,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				+"	    <td>"+value.zoneName+"</td>"
     				+"	    <td>"+value.siteName+"</td>"
     				+"	    <td>"+value.siteNumber+"</td>"
-    				+"	    <td>"+value.smsPerson+"</td>"
-					+"	    <td>"+value.smsPhone+"</td>"
+    				+"	    <td>"+value.site_person+"</td>"
+					+"	    <td>"+value.site_phone+"</td>"
+					+"	    <td><a href='/AlarmPlatForm/jsp/siteUser/showSiteInfo.jsp?siteNumber="+value.siteNumber+"'>查看</a>&nbsp;<a href='/AlarmPlatForm/jsp/siteUser/updateSiteInfo.jsp?siteNumber="+value.siteNumber+"'>编辑</a></td>"
     				+"    </tr>";
     			}
 		  	}

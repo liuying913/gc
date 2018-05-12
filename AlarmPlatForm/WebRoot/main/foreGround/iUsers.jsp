@@ -37,13 +37,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<div style="float:right;margin-top: 15px;width:25%;float:right; color: #666666; font-size: 14px; line-height: 25px; letter-spacing: 0.5px;">
             <div>
-		                地址：北京市西城区三里河路56号<br>
-		                电话：010-68512355<br>
-		                手机：18600781413<br>
-		                传真：010-68512203<br>
-		        Email：cmonoc@seis.ac.cn<br>
-		                邮编：100045
-		        <br />
+		                单位名称：国家基础地理信息中心<br>       
+		                地址：北京市海淀区莲花池西路28号<br>
+		                电话：010-63881008<br>
+		                传真：(010)63881026<br>
+		        Email：office@ngcc.cn<br>
+		                邮编：100830<br>
 		                合影照片！！！
             </div>
             <!--<img src="/AlarmPlatForm/img/contactus-pic.png" />-->

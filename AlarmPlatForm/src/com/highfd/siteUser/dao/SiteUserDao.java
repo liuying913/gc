@@ -3,6 +3,7 @@ package com.highfd.siteUser.dao;
 import java.util.List;
 
 import com.highfd.siteUser.model.SiteInfo;
+import com.highfd.siteUser.model.ZoneInfo;
 
 public interface SiteUserDao {
 	
@@ -20,5 +21,8 @@ public interface SiteUserDao {
 	 * 更新台站信息
 	 */
 	public void updateBaseSiteInfo(final SiteInfo siteInfo) throws Exception;
+	
+	 //获得  省份  列表
+    public List<ZoneInfo>  getZoneInfoList();
 	
 }

@@ -42,8 +42,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页></a><a href="/AlarmPlatForm/skip.action?pageName=2">平台简介></a><a href="/AlarmPlatForm/skip.action?pageName=2" class="onactive">平台简介</a></div>
             </div>
             <div class="CenterP-right-content">
-              GNSS数据资源共享与信息发布平台：依托以中国大陆构造环境监测网络为纽带的全国GNSS数据资源共享任务,结合地壳运动监测工程研究中心的相关业务，建设对海量GNSS数据进行有效整理、预处理、计算、共享及结果发布的数据共享与信息发布平台。
-			    该平台需要对汇集在北京数据共享中心的全国GNSS数据资源进行实时采集、实时汇集、自动整理、实时共享、解析、计算和存储等，同时对数据资源的使用和共享进行管理统计，并提供多元的可视化发布手段。
+              			国家基础地理信息中心智能报警平台:该平台实现通过对基准站各设备运行状态数据的采集，根据平台报警规则，实时智能的产生报警，并将报警以短信的形式通知相关负责人，确保在设备运行出现异常后能够得到快速及时的处理。
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体功能包括：基准站各设备运行状态数据采集、实时报警、短信发送、观测数据质量分析、综合管理等功能。
             </div>
             <img style="margin-top: 20px; width: 645px;" src="/AlarmPlatForm/img/zxjj-pic.png" />
         </div>

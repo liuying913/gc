@@ -59,6 +59,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     -webkit-border-radius: 0;
     background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) 100% center no-repeat #fff;
 }
+.sea-box .seabtn {
+    width: 100px;
+    height: 34px;
+    float: none; 
+    border: none; 
+    cursor: pointer; 
+    background-color: #306ab5; 
+    color: #fff; 
+}
 
 </style>
 
@@ -71,13 +80,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
   <div id="iframeheight">
   		<div class="pbox tspbox">
+		<div class="ContactUs-header" style="margin: 20px auto 0;width:1200px;">
+            <div class="header-tit">台站管理</div>
+            <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页&gt;</a><a href="/AlarmPlatForm/skip.action?pageName=siteList" class="onactive">台站管理</a></div>
+        </div>
   			<div class="clear" style="height:10px;"></div>
-  			<div class="sea-box" style="text-align:center;margin:0 auto;height:36px;margin-top:20px;">
-    			<input class="searchParam" style="width:160px;height:34px;font-size: 14px;line-height: 32px;font-family: '微软雅黑';" type="text"/>
+  			<div class="sea-box" style="text-align:center;margin:0px auto 10px;height:36px;">
+    			<input class="searchParam" style="width:350px;height:34px;font-size: 14px;line-height: 32px;font-family: '微软雅黑';border:1px solid #ddd;" type="text"/>
   				<input type="button" value="搜索" class="seabtn" id="select" style="height:34px;font-size: 16px;line-height: 32px;font-family: '微软雅黑';margin-left: 20px;">
-  				<div class="span pp">
-                <input type="button" value="导出" class="seabtn" id="excel" style="height:34px;font-size: 16px;line-height: 32px;font-family: '微软雅黑'; padding:0px 5px; margin-top: 0px;margin-left: 30px;">
-  				</div>
+                <input type="button" value="导出" class="seabtn" id="excel" style="height:34px;font-size: 16px;line-height: 32px;font-family: '微软雅黑'; padding:0px 5px; margin-top: 0px;margin-left: 20px;">
+  				
   			</div>  
 			<style> 
             	.sea-box{ box-shadow:none;height:auto;width: 95%;margin-left: 28%;}
@@ -92,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </style>
             
             
-           <div style="min-height: 160px;text-align:center;margin-top:-10px;" >
+           <div style="min-height: 160px;text-align:center;width: 1200px;margin: 0 auto;" >
 			   <table width="80%" border="0" cellspacing="0" cellpadding="0" class="table01" style="text-align:center;">
 				   <tr>
 					   <th style="white-space: nowrap;">序号</th>
@@ -171,12 +183,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				+"	    <td>"+value.siteName+"</td>"
     				+"	    <td>"+value.siteNumber+"</td>"
     				+"	    <td>"+value.smsPerson+"</td>"
+					+"	    <td>"+value.smsPhone+"</td>"
     				+"    </tr>";
     			}
 		  	}
 		});
 		$("#tbody").html(str); 
 		$('#iframe', parent.document).css("height",$("#iframeheight").height());
+		
+	
 	}
   	
   	

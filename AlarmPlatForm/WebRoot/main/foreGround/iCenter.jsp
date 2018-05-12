@@ -8,9 +8,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
     <title>GNSS数据资源共享与信息发布平台</title>
-    <link rel="stylesheet" type="text/css" href="/DataShare/css/css.css" />
-    <link rel="stylesheet" type="text/css" href="/DataShare/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/DataShare/css/qd.css"/>
+    <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/css.css" />
+    <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/qd.css"/>
 </head>
 <body>
 	<!--  ==顶部==  -->
@@ -27,9 +27,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <div class="leftbar_top"><h3>平台简介</h3></div>
         <!--左侧弹性竖菜单-->
         <div id="menu">
-	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_10"><a href="/DataShare/index.action?id=2">平台简介</a></h1>
-	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_11"><a href="/DataShare/index.action?id=21" class="active">中心简介</a></h1>
-	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_12"><a href="/DataShare/index.action?id=22">共享理念</a></h1>
+	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_10"><a href="/AlarmPlatForm/skip.action?pageName=2">平台简介</a></h1>
+	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_11"><a href="/AlarmPlatForm/skip.action?pageName=21" class="active">中心简介</a></h1>
+	        <h1 onClick="javascript:ShowMenu(this,'NO2')" id="c_12"><a href="/AlarmPlatForm/skip.action?pageName=22">共享理念</a></h1>
         </div>
 		
      </div>
@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="CenterP-right">
             <div class="CenterP-right-header">
                 <div class="header-tit">中心简介</div>
-                <div class="header-nav"><a href="/DataShare/index.action?id=1">主页></a><a href="/DataShare/index.action?id=2">平台简介></a><a href="/DataShare/index.action?id=21" class="onactive">中心简介</a></div>
+                <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页></a><a href="/AlarmPlatForm/skip.action?pageName=2">平台简介></a><a href="/AlarmPlatForm/skip.action?pageName=21" class="onactive">中心简介</a></div>
             </div>
             <div class="CenterP-right-content">
                 地壳运动监测工程研究中心是中国地震局直属的集项目管理、工程建设和科学研究三位一体的事业单位。承担的主要任务是负责
@@ -48,15 +48,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 中心以服务于国家防震减灾事业、国民经济建设、社会减灾、科学研究和国防建设为宗旨；以"务实求效、开拓奋进、创新报国、追求
                 卓越"为团队文化。
             </div>
-            <img style="margin-top: 20px; width: 645px;" src="/DataShare/img/zxjj-pic.png" />
+            <img style="margin-top: 20px; width: 645px;" src="/AlarmPlatForm/img/zxjj-pic.png" />
         </div>
     </div>
     
 	<!--  = 底部 =  -->
 	<%@ include file="../../foot.jsp" %>
 	
-    <script src="/DataShare/js/jQueryv1.9.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/DataShare/js/new_file.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/AlarmPlatForm/js/jQueryv1.9.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/AlarmPlatForm/js/new_file.js" type="text/javascript" charset="utf-8"></script>
     <script>
         $("#c_"+11).addClass("on");
         $("#c_"+11).parent().css('display','block');

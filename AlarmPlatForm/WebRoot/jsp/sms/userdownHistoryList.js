@@ -5,7 +5,6 @@
 	  		var endTime = getToday();
 	  		$(".startTime").val(startTime);
 	  		$(".endTime").val(endTime); //结束时间赋值
-	  		alert(pageSize);
 	  		var url = "/AlarmPlatForm/smsSendSearch/querySmsInfoList.action?startTime="+startTime+"&endTime="+endTime+"&isFlag="+isFlag+"&pageSize="+pageSize;
 			ajaxRequest(url, "get", function(res) {
 				var JSONObj = res;

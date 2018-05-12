@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-	<title>国家测绘局基础地理信息中心智能报警平台</title>
+	<title>国家基础地理信息中心智能报警平台</title>
 	<link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/css.css"/>
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/qd.css"/>
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <li><a href="/AlarmPlatForm/skip.action?pageName=alarmList"><img src="/AlarmPlatForm/img/index-img-17.png"/>报警查询</a></li>
                   <li><a href="/AlarmPlatForm/skip.action?pageName=teqcList"><img src="/AlarmPlatForm/img/index-img-18.png"/>文件查询</a></li>
                   <li><a href="/AlarmPlatForm/skip.action?pageName=siteList"><img src="/AlarmPlatForm/img/index-img-19.png"/>台站管理</a></li>
-                  <li><a href="/AlarmPlatForm/skip.action?pageName=9"><img src="/AlarmPlatForm/img/index-img-20.png"/>意见建议</a></li>
+                  <li><a href="/AlarmPlatForm/skip.action?pageName=5"><img src="/AlarmPlatForm/img/index-img-20.png"/>联系我们</a></li>
                   <li style="width:1px; padding:0px;"><a href="#">&nbsp;</a></li>
                 </ul>
               </div>

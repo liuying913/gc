@@ -72,17 +72,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
   <div id="iframeheight">
   		<div class="pbox tspbox">
+		    <div class="ContactUs-header" style="margin: 20px auto 0;width:1200px;">
+            <div class="header-tit">文件查询</div>
+            <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页&gt;</a><a href="/AlarmPlatForm/skip.action?pageName=teqcList" class="onactive">文件查询</a></div>
+        </div>
   			<div class="clear" style="height:10px;"></div>
-  			<div class="sea-box" style="text-align:center;margin:0 auto;height:36px;margin-top:20px;">
+  			<div class="sea-box" style="width:1200px;text-align:center;margin:0px auto 10px;height:36px;">
   			
 	  			<div class="shengfen shengfen03" style="width:auto;height:36px;">
 	  			
 					<div class="span pp"> 
-                    	<span class="startTitle"  style="height:34px;font-size: 16px;line-height: 32px;font-family: '微软雅黑'; padding:0px 5px; margin-top: 0px;margin-left: 30px;">开始时间</span>   
+                    	<span class="startTitle"  style="height:34px;font-size: 16px;line-height: 32px;font-family: '微软雅黑'; padding:0px 5px; margin-top: 0px;margin-left: 75px;">开始时间</span>   
                     	<input class="startTime" style="width:160px;height:34px;font-size: 14px;line-height: 32px;font-family: '微软雅黑';" type="text"  onFocus="WdatePicker({isShowClear:false,dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})"/>
                     </div>	 
 					<div class="span pp">
-                    	<span class="enTitle" style="margin-left: 15px;">结束时间</span>   
+                    	<span class="enTitle" style="height:34px;font-size: 16px;line-height: 32px;font-family: '微软雅黑'; padding:0px 5px; margin-top: 0px;margin-left: 20px;">结束时间</span>   
                     	<input class="endTime" style="width:160px;height:34px;font-size: 14px;line-height: 32px;font-family: '微软雅黑';" type="text" onFocus="WdatePicker({isShowClear:false,dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})"/>
                     </div>  
   
@@ -90,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				<div class="span pp">
 		  			<span class="myTip" style="margin-left: 15px;">文件分类</span>
-             		<div class="select-container">
+             		<div class="select-container" style="margin-left: 0px;">
 	                   <select id="userId" style="height:34px;font-size: 14px;line-height: 14px;font-family: '微软雅黑';margin-left: -5px;" class="userId" name="userId">
 	                   	  <option value='' style="font-size: 14px; font-family: '微软雅黑';">全部</option>
 	                   	  <option value='1' style="font-size: 14px; font-family: '微软雅黑';">完整</option>
@@ -117,7 +121,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </style>
             
             
-           <div style="min-height: 160px;text-align:center;margin-top:-10px;" >
+           <div style="width: 1200px;margin: 0 auto;min-height: 160px;text-align:center;" >
 			   <table width="80%" border="0" cellspacing="0" cellpadding="0" class="table01" style="text-align:center;">
 				   <tr>
 					   <th style="white-space: nowrap;">序号</th>

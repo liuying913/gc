@@ -1,4 +1,4 @@
-@import url('wjyd.css');
+﻿@import url('wjyd.css');
 
 /*/------
 -----------------------------格式化全局---------------------------------
@@ -317,7 +317,7 @@ body .subnav0 .active { color: red !important; }
 
 /*底部footer*/
 .footerout {border-top: 1px solid #515151;margin-top:10px;box-shadow:0 -2px #ccc;}
-.footer1{margin:0 auto;width:965px;padding:21px 0px 60px 0px;margin-right:250px;}
+.footer1{margin:0 auto;padding:21px 0px 60px 0px;text-align:center;}
 .footer1 .foot_left{font-size:12px;color:#666666;line-height:18px;text-align:left;}
 .footer1 .bottom_bg{width:100%;background:url(../images/bottom_bg.jpg) repeat-x;height:71px;margin-top:38px;}
 
@@ -328,4 +328,8 @@ body .subnav0 .active { color: red !important; }
 .footer1 .friend_list{ display:none; position:absolute; padding:5px 0; left:0px; bottom:29px; width:210px; height:auto; border: 1px solid #bbb; border-bottom: none; background: #FFF;}
 .footer1 .friend_list li{ line-height:20px; margin-left:25px;font-size:12px;}
 .footer1 .friend_list li a{ color:#828282;}
+
+
+
+
 

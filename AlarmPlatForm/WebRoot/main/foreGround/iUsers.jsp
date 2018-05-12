@@ -8,9 +8,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
     <title>GNSS数据资源共享与信息发布平台</title>
-    <link rel="stylesheet" type="text/css" href="/DataShare/css/css.css" />
-	<link rel="stylesheet" type="text/css" href="/DataShare/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/DataShare/css/qd.css"/>
+    <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/css.css" />
+	<link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/qd.css"/>
 </head>
 <body>
     <!--  ==========  -->
@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<%@ include file="../../head.jsp" %>
 	
     <div class="banner_son">
-		<img src="/DataShare/img/img_zxjj.jpg" />
+		<img src="/AlarmPlatForm/img/img_zxjj.jpg" />
     </div>
     <!--  ==========  -->
     <!--  ==页面主体==  -->
@@ -26,11 +26,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="ContactUs-main">
         <div class="ContactUs-header">
             <div class="header-tit">联系我们</div>
-            <div class="header-nav"><a href="/DataShare/index.action">主页></a><a href="#" class="onactive">联系我们</a></div>
+            <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页></a><a href="#" class="onactive">联系我们</a></div>
         </div>
 		
         <div style="float:left;width:70%">
-			<img src="/DataShare/img/address.png"/>
+			<img src="/AlarmPlatForm/img/address.png"/>
 		</div>
        
 
@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		        <br />
 		                合影照片！！！
             </div>
-            <!--<img src="/DataShare/img/contactus-pic.png" />-->
+            <!--<img src="/AlarmPlatForm/img/contactus-pic.png" />-->
         </div>
 
         
@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--  = 底部 =  -->
 	<%@ include file="../../foot.jsp" %>
 	
-    <script src="/DataShare/js/jQueryv1.9.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/DataShare/js/new_file.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/AlarmPlatForm/js/jQueryv1.9.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/AlarmPlatForm/js/new_file.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

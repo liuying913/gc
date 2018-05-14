@@ -128,7 +128,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					   <th style="white-space: nowrap;">台站名称</th>
 					   <th style="white-space: nowrap;">台站编号</th>
 					   <th style="white-space: nowrap;">所属省份</th>
-					   <th style="white-space: nowrap;">所属部委</th>
 					   <th style="white-space: nowrap;">故障类型</th>
 					   <th style="white-space: nowrap;">故障开始时间</th>
 					   <th style="white-space: nowrap;">故障结束时间</th>

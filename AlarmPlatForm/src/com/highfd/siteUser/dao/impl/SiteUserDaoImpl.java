@@ -38,7 +38,7 @@ public class SiteUserDaoImpl implements SiteUserDao{
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List<SiteInfo>  getSiteInfoList(String siteParam){
 		StringBuffer sql = new StringBuffer();
-		sql.append("select row_number() over( order by z.zone_name ) as rm,s.SITE_SELECT_UNIT,s.site_number,s.site_name,s.site_phone,s.site_person,"
+		sql.append("select row_number() over( order by s.site_zone ) as rm,s.SITE_SELECT_UNIT,s.site_number,s.site_name,s.site_phone,s.site_person,"
 				+ "s.site_gnss_ip,s.site_router_ip,s.site_dcups_ip,s.site_acups_ip,"
 				+ "s.site_lat,s.SITE_Lon,s.SITE_ADDRESS,z.zone_code,z.zone_name,d.dic_cn_name,d.dic_code "
 				+ "from site_info s,zone_info z ,dic_info d where s.site_zone = z.zone_code and s.SITE_DEPARTMENT =d.dic_code ");

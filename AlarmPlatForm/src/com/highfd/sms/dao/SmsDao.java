@@ -15,4 +15,9 @@ public interface SmsDao {
 	//查询短信信息
 	public List<SmsInfo>  querySmsInfoList(String startTime,String endTime,String isFlag,PageInfo pageinfo);
 	
+	/**
+	 * 根据ID获得短信详情
+	 */
+	public SmsInfo getSMSInfoById(final String id) throws Exception;
+	
 }

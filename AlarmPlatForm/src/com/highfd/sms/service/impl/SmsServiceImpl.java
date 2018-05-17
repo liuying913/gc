@@ -27,4 +27,11 @@ public class SmsServiceImpl implements SmsService {
 	public List<SmsInfo>  querySmsInfoList(String startTime,String endTime,String isFlag,PageInfo pageinfo){
 		return dao.querySmsInfoList(startTime, endTime, isFlag, pageinfo);
 	}
+	
+	/**
+	 * 根据ID获得短信详情
+	 */
+	public SmsInfo getSMSInfoById(final String id) throws Exception {
+		return dao.getSMSInfoById(id);
+	}
 }

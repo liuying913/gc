@@ -34,8 +34,6 @@ public class SmsSendController {
 	@Autowired
 	SmsService smsService;
 	
-	public static String twzxPhone = "18910061019";
-	
 	@Autowired
 	SiteService siteService;
 	public static final Logger smsLog = LoggerFactory.getLogger("itemCRUD");
@@ -58,7 +56,7 @@ public class SmsSendController {
 	public void mondayFlag() throws Exception {
 		System.out.println("*******每周一判定********");
 		if(TimeUtils.mondayFlag()){
-			mondayFlag=true;
+			//mondayFlag=true;//周一提醒关闭
 		}
 		System.out.println(mondayFlag);
 	}

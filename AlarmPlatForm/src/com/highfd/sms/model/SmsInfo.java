@@ -3,6 +3,7 @@ package com.highfd.sms.model;
 public class SmsInfo {
 	
 	public String id;
+	public String RN;
 	public String siteNumber;
 	public String siteName;
 	public String eventId;
@@ -91,38 +92,24 @@ public class SmsInfo {
 	public String getSiteName() {
 		return siteName;
 	}
-
-
 	public void setSiteName(String siteName) {
 		this.siteName = siteName;
 	}
-
-
 	public String getZoneName() {
 		return zoneName;
 	}
-
-
 	public void setZoneName(String zoneName) {
 		this.zoneName = zoneName;
 	}
-
-
 	public String getDepartMent() {
 		return departMent;
 	}
-
-
 	public void setDepartMent(String departMent) {
 		this.departMent = departMent;
 	}
-
-
 	public String getDescription() {
 		return description;
 	}
-
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -136,6 +123,12 @@ public class SmsInfo {
 	}
 	public void setEvnetType(String evnetType) {
 		this.evnetType = evnetType;
+	}
+	public String getRN() {
+		return RN;
+	}
+	public void setRN(String rN) {
+		RN = rN;
 	}
 	
 }

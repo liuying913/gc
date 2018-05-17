@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
+response.setContentType("text/html;charset=utf-8");
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
@@ -8,6 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
     <title>短信发布平台</title>
+    <meta name="renderer" content="webkit">
 	<link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/css.css" />
     <link rel="stylesheet" type="text/css" href="/AlarmPlatForm/css/drop-down.css" />

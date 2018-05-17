@@ -66,7 +66,15 @@ public class SmsSendSearchController {
 	}
 	
 	
-	
+	//获得单个短信报警信息
+	@RequestMapping(value = "/getSMSInfoById", produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public String getBaseSiteInfoById(HttpServletRequest request) throws Exception {
+		String id = request.getParameter("id");
+		SmsInfo smsInfo = smsService.getSMSInfoById(id);
+		JSONArray json = JSONArray.fromObject(smsInfo);
+		return json.toString();
+	}
 	
 	
 	

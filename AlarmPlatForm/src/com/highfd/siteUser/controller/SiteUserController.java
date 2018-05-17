@@ -3,6 +3,7 @@ package com.highfd.siteUser.controller;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,8 +64,10 @@ public class SiteUserController {
 	@ResponseBody
 	public String getSiteInfoList(HttpServletRequest request) throws UnsupportedEncodingException {
 		String searchParam = request.getParameter("searchParam");
+		System.out.println("查询参数："+searchParam);
 		//String str = new String(searchParam.getBytes("ISO8859-1"),"utf-8");   
 		//System.out.println(searchParam+" | "+str);
+		//searchParam = new String(searchParam.getBytes("ISO-8859-1"),"UTF-8");
 		System.out.println("查询参数："+searchParam);
 		List<SiteInfo> siteInfoList = siteUserService.getSiteInfoList(searchParam);
 		JSONArray json = JSONArray.fromObject(siteInfoList);

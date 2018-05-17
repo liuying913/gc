@@ -12,10 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.highfd.common.PageInfo;
 import com.highfd.common.TimeUtils;
+import com.highfd.siteUser.model.SiteInfo;
 import com.highfd.sms.dao.SmsDao;
 import com.highfd.sms.model.SmsInfo;
 
@@ -85,7 +87,7 @@ System.out.println(sql);
 		pageinfo.setPageCount(pageinfo.getRecordCount()%pageinfo.getPageSize()==0?pageinfo.getRecordCount()/pageinfo.getPageSize():pageinfo.getRecordCount()/pageinfo.getPageSize()+1);
 		StringBuffer sql = new StringBuffer();
 		sql.append("SELECT * FROM  ( SELECT A.*, ROWNUM RN  FROM ( ");
-		sql.append("select s.site_name,s.site_number,z.zone_name,d.dic_cn_name,e.starttime,e.endtime,e.description,t.createtime,t.phone,t.isflag from "
+		sql.append("select t.id, s.site_name,s.site_number,z.zone_name,d.dic_cn_name,e.starttime,e.endtime,e.description,t.createtime,t.phone,t.isflag from "
 				+ "SMS_INFO2 t,event_info e,site_info s,ZONE_INFO z,DIC_INFO d "
 				+ "where t.eventid=e.id and e.sitenumber=s.site_number and s.site_zone=z.zone_code and s.site_department=d.dic_code ");
 		
@@ -100,11 +102,12 @@ System.out.println(sql);
 		sql.append(" order by t.createtime desc");
 		sql.append(") A ) WHERE RN between "+((pageinfo.getCurrentPage()-1)*pageinfo.getPageSize() + 1)+" and "+(pageinfo.getCurrentPage()*pageinfo.getPageSize())+"");
 		System.out.println(sql);
-		@SuppressWarnings({ "unchecked", "rawtypes"})
+		@SuppressWarnings({ "unchecked"})
 		List<SmsInfo> eventInfoList = jdbcTemplate.query(sql.toString(), new RowMapper(){
 			public Object mapRow(ResultSet rs, int arg1) throws SQLException {
 				SmsInfo info = new SmsInfo();
-				info.setId(rs.getString("RN"));
+				info.setId(rs.getString("id"));
+				info.setRN(rs.getString("RN"));
 				info.setSiteName(rs.getString("site_name"));
 		    	info.setSiteNumber(rs.getString("site_number"));
 		    	info.setZoneName(rs.getString("zone_name"));
@@ -137,5 +140,58 @@ System.out.println(sql);
 		});
 		return eventInfoList;
 	}
+	
+	
+	
+	
+	
+	/**
+	 * 根据ID获得短信详情
+	 */
+	@SuppressWarnings({ "unchecked"})
+	public SmsInfo getSMSInfoById(final String id) throws Exception {
+		String sql = " select t.id, site_name,s.site_number,z.zone_name,d.dic_cn_name,e.starttime,e.endtime,e.description,t.createtime,t.phone,t.isflag,t.smscontent from SMS_INFO2 t,event_info e,site_info s,ZONE_INFO z,DIC_INFO d where t.eventid=e.id and e.sitenumber=s.site_number and s.site_zone=z.zone_code  and s.site_department=d.dic_code  and t.id=?";
+		String[] code = new String[] { id };
+		SmsInfo obj = (SmsInfo) jdbcTemplate.query(sql, code,
+				new ResultSetExtractor() {
+					public Object extractData(ResultSet rs)
+							throws SQLException, DataAccessException {
+						if (rs.next()) {
+							SmsInfo info = new SmsInfo();
+							info.setSiteName(rs.getString("site_name"));
+					    	info.setSiteNumber(rs.getString("site_number"));
+					    	info.setZoneName(rs.getString("zone_name"));
+					    	info.setDepartMent(rs.getString("dic_cn_name"));
+					    	info.setStartTimeStr(TimeUtils.TimestampToString(rs.getTimestamp("starttime")));
+					    	Timestamp endTime = rs.getTimestamp("endtime");
+					    	if(null!=endTime){
+					    		info.setEndTimeStr(TimeUtils.TimestampToString(endTime));
+					    	}else{
+					    		info.setEndTimeStr("");
+					    	}
+					    	
+					    	info.setDescription(rs.getString("description"));
+					    	info.setCreateTimeStr(TimeUtils.TimestampToString(rs.getTimestamp("createtime")));
+					    	info.setPhone(rs.getString("phone"));
+					    	info.setSmsContent(rs.getString("smscontent"));
+					    	String isFlag = rs.getString("isflag");
+					    	if(null!=isFlag){
+					    		if(isFlag.equals("true")){
+					    			info.setIsFlag("发送成功");
+					    		}else{
+					    			info.setIsFlag("发送失败");
+					    		}
+					    	}else{
+					    		info.setIsFlag("发送失败");
+					    	}
+					    	
+							return info;
+						}
+						return null;
+					}
+				});
+		return obj;
+	}
+	
 	
 }

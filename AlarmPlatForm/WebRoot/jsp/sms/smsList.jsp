@@ -133,6 +133,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					   <th style="white-space: nowrap;">故障结束时间</th>
 					   <th style="white-space: nowrap;">发送号码</th>
 					   <th style="white-space: nowrap;">短信发送时间</th>
+					   <th style="white-space: nowrap;">操作</th>
 				   </tr>
 				   <tbody id="tbody">
 				   </tbody>

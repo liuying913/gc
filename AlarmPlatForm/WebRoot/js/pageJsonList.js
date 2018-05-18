@@ -10,7 +10,6 @@ function page(){
     pages = (data.length % num_value==0? data.length / num_value: Math.ceil(data.length / num_value));
     $("#zongyeshu")[0].innerHTML = pages;       //总共页数
     $("#zongshuju")[0].innerHTML = data.length;      //一共有多少条数据
-    
     //默认显示的五个界面
     //for (var i = shu; i < shu+5; i++) {
         $("<a href='javascript:void(0)' onclick='yeshu(this)';>").text(shu).appendTo(".everypages");
@@ -25,6 +24,7 @@ function page(){
     var browser = navigator.appName;
     var b_version = navigator.appVersion;
     var version = b_version.split(";");
+	
     if (version.length > 1) {
         var trim_Version = parseInt(version[1].replace(/[ ]/g, "").replace(/MSIE/g, ""));
         if (trim_Version < 9) {
@@ -33,6 +33,7 @@ function page(){
             $(".everypages").children()[0].style.color="red";
         }
     }
+	
 }
 var flag=0;
 function yeshu(div) {

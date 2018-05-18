@@ -95,11 +95,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="span pp">
 		  			<span class="myTip" style="margin-left: 15px;">文件分类</span>
              		<div class="select-container" style="margin-left: 0px;">
-	                   <select id="userId" style="height:34px;font-size: 14px;line-height: 14px;font-family: '微软雅黑';margin-left: -5px;" class="userId" name="userId">
+	                   <!--<select id="userId" style="height:34px;font-size: 14px;line-height: 14px;font-family: '微软雅黑';margin-left: -5px;" class="userId" name="userId">
 	                   	  <option value='' style="font-size: 14px; font-family: '微软雅黑';">全部</option>
 	                   	  <option value='1' style="font-size: 14px; font-family: '微软雅黑';">完整</option>
 	                   	  <option value='0' style="font-size: 14px; font-family: '微软雅黑';">缺失</option>
 	                   </select>
+	                   -->
+					   <div class="isout">
+							<span>全部</span>
+							<ul style="display:none;">
+								<li rel=''>全部</li>
+								<li rel='1'>完整</li>
+								<li rel='0'>缺失</li>
+							</ul>
+					   </div>
+					   <input type="hidden" value="" id="userId" name="userId">
 	                </div>
     			</div>  
     			
@@ -118,12 +128,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				.seabtn{height:34px;}
 				.startTitle{height:34px;}
 				.enTitle{height:34px;}
-            </style>
+				.isout span{display:block;border:1px solid #ddd;height:33px;font-size: 14px;line-height:33px;font-family: '微软雅黑';width:120px;padding:0 10px;text-align:left;background:url("/AlarmPlatForm/img/pcgzs/ico2.png") 95% center no-repeat;}
+				.isout{position:relative;cursor:pointer;}
+				.isout ul{position:absolute;left:0;top:34px;z-index:5;background-color:#fff;border:1px solid #ddd;width:140px;border-bottom:none;}
+				.isout ul li{padding:0 10px;border-bottom:1px solid #ddd;height:33px;line-height:33px;font-family: '微软雅黑';text-align:left;}
+				.isout ul li.cur{ background-color:#f9f9f9;}
+			</style>
             
-            
-           <div style="width: 1200px;margin: 0 auto;min-height: 160px;text-align:center;" >
-			   <table width="80%" border="0" cellspacing="0" cellpadding="0" class="table01" style="text-align:center;">
-				   <tr>
+            <script>
+				$(".isout span").click(function(){
+					$(".isout ul").show();
+				})
+				$(".isout ul li").hover(function(){
+					$(this).addClass("cur");
+				},function(){
+					$(this).removeClass("cur");
+				})
+				$(".isout ul li").click(function(e){
+					var val=$(this).attr("rel");
+					var name=$(this).text();
+					$(".isout span").text(name);
+					$("#userId").val(val);
+					$(".isout ul").hide();
+				})
+				$(".isout").mouseleave(function(){
+					$(".isout ul").hide();
+
+				})
+			</script>
+           <div style="min-height: 160px;text-align:center;width:1200px;margin:0 auto;" >
+			   <table width="80%" border="0" cellspacing="0" cellpadding="0" class="table01" style="text-align:center;table-layout:fixed;">				   <tr>
 					   <th style="white-space: nowrap;">序号</th>
 					   <th style="white-space: nowrap;">所属省份</th>
 					   <th style="white-space: nowrap;">台站名称</th>

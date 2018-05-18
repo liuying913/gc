@@ -32,7 +32,7 @@
 	});
 	var str = "";
 	var recordCount;// 总记录条数
-	var currentPage;// 当前页数
+	var currentPage=1;// 当前页数
 	var pageSize;// 每页显示数目
 	var pageFlag = "true";
 	var pageCount;// 总页数
@@ -52,6 +52,8 @@
 			pageFlag = "false";
 		}
 		//$(".everypages").children()[0].style.color = "red";
+		$(".everypages").text(currentPage);
+		$(".everypages").css("color","red");
 	}
 	var flag = 0;
 	function shua(data) {
@@ -65,7 +67,7 @@
 			// if( key>(currentPage-1)*pageSize && key<= currentPage*pageSize){
 			if (key % 2 != 0) {
 				str = str + "<tr class='even'>"
-				+"	    <td>"+data[key - 1].RN+"</td>"
+				+"	    <td>"+data[key - 1].id+"</td>"
 				+"	    <td>"+data[key - 1].siteName+"</td>"
 				+"	    <td>"+data[key - 1].siteNumber+"</td>"
 				+"	    <td>"+data[key - 1].zoneName+"</td>"
@@ -74,11 +76,10 @@
 				+"	    <td>"+data[key - 1].endTimeStr+"</td>"
 				+"	    <td>"+data[key - 1].phone+"</td>"
 				+"	    <td>"+data[key - 1].createTimeStr+"</td>"
-				+"	    <td><a href='/AlarmPlatForm/jsp/sms/showSMSInfo.jsp?id="+data[key - 1].id+"'>查看</a></td>"
 				+ "    </tr>";
 			} else {
 				str = str + "<tr>" 
-				+"	    <td>"+data[key - 1].RN+"</td>"
+				+"	    <td>"+data[key - 1].id+"</td>"
 				+"	    <td>"+data[key - 1].siteName+"</td>"
 				+"	    <td>"+data[key - 1].siteNumber+"</td>"
 				+"	    <td>"+data[key - 1].zoneName+"</td>"
@@ -87,7 +88,6 @@
 				+"	    <td>"+data[key - 1].endTimeStr+"</td>"
 				+"	    <td>"+data[key - 1].phone+"</td>"
 				+"	    <td>"+data[key - 1].createTimeStr+"</td>"
-				+"	    <td><a href='/AlarmPlatForm/jsp/sms/showSMSInfo.jsp?id="+data[key - 1].id+"'>查看</a></td>"
 				+ "    </tr>";
 			}
 			// }

@@ -103,7 +103,7 @@ public class TEQCDaoImpl implements TEQCDao{
 	/**
 	 * 30日常数据补充整理*************************************************************************************************
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked"})
 	public void update_30S_apply(final String year,final FileInfo fileInfo) {
 		
 		String sql = "update file_info set ephem_number=?, fileflag=?, MP1=?,MP2=?,O_SLPS=?, FILESIZE=? where site_number=? and filedayyear = ?";
@@ -135,7 +135,7 @@ public class TEQCDaoImpl implements TEQCDao{
 		
 		//时间段
 		if(null!=startTime && !"".equals(startTime) && null!=endTime && !"".equals(endTime)){
-			sql.append(" and t.systemTime between to_date('"+startTime+"','yyyy-mm-dd hh24:mi:ss')  and to_date('"+endTime+"','yyyy-mm-dd hh24:mi:ss') ");
+			sql.append(" and  TO_DATE( TO_CHAR( t.systemTime,    'YYYY-MM-DD HH24:MI:SS'),  'YYYY-MM-DD HH24:MI:SS')  between to_date('"+startTime+"','yyyy-mm-dd hh24:mi:ss')  and to_date('"+endTime+"','yyyy-mm-dd hh24:mi:ss') ");
 		}
 		
 		//文件状态
@@ -152,7 +152,6 @@ public class TEQCDaoImpl implements TEQCDao{
 	/**
 	 * 根据 开始时间 结束时间 台站类别  台站经纬度坐标 进行查询
 	 */
-	@SuppressWarnings("rawtypes")
 	public List<FileInfo>  getFileInfoList(String startTime,String endTime,String fileYear,String fileFlag,final boolean isYear,PageInfo pageinfo){
 		
 		pageinfo.setRecordCount(getListCount( startTime, endTime, fileYear, fileFlag,  isYear));
@@ -167,7 +166,7 @@ public class TEQCDaoImpl implements TEQCDao{
 		
 		//时间段
 		if(null!=startTime && !"".equals(startTime) && null!=endTime && !"".equals(endTime)){
-			sql.append(" and t.systemTime between to_date('"+startTime+"','yyyy-mm-dd hh24:mi:ss')  and to_date('"+endTime+"','yyyy-mm-dd hh24:mi:ss') ");
+			sql.append(" and  TO_DATE( TO_CHAR( t.systemTime,    'YYYY-MM-DD HH24:MI:SS'),  'YYYY-MM-DD HH24:MI:SS')  between to_date('"+startTime+"','yyyy-mm-dd hh24:mi:ss')  and to_date('"+endTime+"','yyyy-mm-dd hh24:mi:ss') ");
 		}
 		
 		//年

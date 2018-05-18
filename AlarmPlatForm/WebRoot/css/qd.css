@@ -1,10 +1,10 @@
 ﻿.header{height:95px;overflow:hidden;width:100%;}
-.logo img{height:52px;}
-.logo{height:52px;margin:21px 0 0 0; line-height:52px;font-size:}
+.logo img{height:100px;}
+.logo{height:52px;margin:0 0 0 0; line-height:52px;font-size:}
 .logo img,.logo i{float:left;display:inline;margin-right:10px;}
-.logo i{color:#555;font-size:30px;font-weight:bold;}
+.logo i{color:#555;font-size:30px;font-weight:bold;padding-top:15px;}
 .index-banner img{width:auto;}
-.mhead{float:right;width:575px;margin-top: 48px;}
+.mhead{float:right;width:550px;margin-top: 48px;}
 .nav{font-size:16px;color:#383838;margin:0;}
 .i_shezhi{font-size:14px;margin:22px 0 19px 0;width:auto;height:auto; line-height:normal;}
 .i_shezhi a{width:auto;padding:0 8px;float:none;display:inline;}

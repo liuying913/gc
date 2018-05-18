@@ -204,6 +204,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	
 	$("#select").click(function(){
 		var searchParam = $(".searchParam").val();
+		searchParam = encodeURI(searchParam);
 		ajaxRequest("/AlarmPlatForm/siteUser/getSiteInfoList.action?searchParam="+searchParam,"get",function(res){
 		data = res;
           shua();

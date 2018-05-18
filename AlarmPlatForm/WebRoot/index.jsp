@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="zhongjian">
                <div class="content">
                   <div class="zxdt">
-                     <h3>短信通通<a href="/AlarmPlatForm/skip.action?pageName=3"><img src="/AlarmPlatForm/img/more.png" /></a></h3>
+                     <h3>短信通知<a href="/AlarmPlatForm/skip.action?pageName=3"><img src="/AlarmPlatForm/img/more.png" /></a></h3>
                      <ul id="newswenzi"></ul>
                   </div>
                   

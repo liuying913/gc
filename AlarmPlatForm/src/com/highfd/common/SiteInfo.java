@@ -37,6 +37,7 @@ public class SiteInfo {
 	private String siteLng;
 	private String siteLat;
 	private int siteState;
+	private int aupsState;
 	
 	public int getSiteState() {
 		return siteState;
@@ -103,5 +104,11 @@ public class SiteInfo {
 	}
 	public void setGnssIp(String gnssIp) {
 		this.gnssIp = gnssIp;
+	}
+	public int getAupsState() {
+		return aupsState;
+	}
+	public void setAupsState(int aupsState) {
+		this.aupsState = aupsState;
 	}
 }

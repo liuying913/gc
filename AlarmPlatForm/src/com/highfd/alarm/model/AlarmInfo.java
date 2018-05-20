@@ -45,7 +45,10 @@ public class AlarmInfo {
 	public String zoneName;
 	public String startTimeStr;
 	public String endTimeStr;
-	
+	/**
+	 * 11 12标识状态
+	 */
+	private String siteState;
 	
 	public AlarmInfo() {
 		super();
@@ -169,6 +172,12 @@ public class AlarmInfo {
 	}
 	public void setEndTimeStr(String endTimeStr) {
 		this.endTimeStr = endTimeStr;
+	}
+	public String getSiteState() {
+		return siteState;
+	}
+	public void setSiteState(String siteState) {
+		this.siteState = siteState;
 	}
 	
 

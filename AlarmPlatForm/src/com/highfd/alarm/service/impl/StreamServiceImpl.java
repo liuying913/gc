@@ -87,7 +87,7 @@ public class StreamServiceImpl{// implements StreamService
 			        numberSet.add(disPingDTO.getSiteNumber());
 			        
 			        if(disPingDTO.getRouteState()==11){
-			        	alarmService.insertInfoSiteState(disPingDTO);
+			        	alarmDao.insertInfoSiteState("info",disPingDTO);
 			        	AlarmController.runtime.sendEvent(disPingDTO);//发送到报警引擎  
 			        }else if(disPingDTO.getRouteState()==12){
 			        	disconnectSiteMap.put(disPingDTO.getSiteNumber(), disPingDTO);
@@ -156,7 +156,7 @@ public class StreamServiceImpl{// implements StreamService
 	        		}
 				}
 				
-				alarmService.insertInfoSiteState(pingDTO);
+				alarmDao.insertInfoSiteState("info",pingDTO);
 				AlarmController.runtime.sendEvent(pingDTO);//发送到报警引擎  
 				disconnectSiteMap.remove(pingDTO.getSiteNumber());
 

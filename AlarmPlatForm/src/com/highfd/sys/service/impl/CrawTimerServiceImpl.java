@@ -78,7 +78,6 @@ public class CrawTimerServiceImpl implements CrawTimerService{
 	class CrawPingTask extends Thread {
 		private String idArr;
 		public CrawPingTask(String idArr){this.idArr = idArr;}
-		@SuppressWarnings("unused")
 		public void run() {
 			try {
 				for(int c=0;c<idArr.split(",").length;c++){//行业数组

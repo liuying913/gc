@@ -25,7 +25,6 @@ import com.highfd.alarm.service.AlarmService;
 import com.highfd.common.PageInfo;
 import com.highfd.common.Excerl.ExcelStyle;
 import com.highfd.common.param.CheckParam;
-import com.highfd.sms.model.SmsInfo;
 
 /**
  * 短信猫发送的短信 查询
@@ -172,5 +171,28 @@ public class AlarmSearchController {
 	         }catch(IOException e){}  
 	     }  
 	     System.out.println("文件生成...");  
+	}
+	
+	@RequestMapping(value="/getMapState",produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public String getMapState(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+		List<AlarmInfo> list = alarmService.getMapState();
+		JSONArray json = JSONArray.fromObject(list);
+		return json.toString();
+	}
+	
+	@RequestMapping(value="/getMapAupsState",produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public String getMapAupsState(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+		List<AlarmInfo> list = alarmService.getMapAupsState();
+		JSONArray json = JSONArray.fromObject(list);
+		return json.toString();
+	}
+	@RequestMapping(value="/getMapDupsState",produces = {"application/json;charset=UTF-8"})
+	@ResponseBody
+	public String getMapDupsState(HttpServletRequest req, HttpServletResponse resp) throws Exception{
+		List<AlarmInfo> list = alarmService.getMapDupsState();
+		JSONArray json = JSONArray.fromObject(list);
+		return json.toString();
 	}
 }

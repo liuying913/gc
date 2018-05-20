@@ -10,7 +10,7 @@ public interface AlarmDao {
 
 	public List<SiteInfo> getSiteUrl(String type);
 	
-	public void insertInfoSiteState(final SiteInfo siteInfo) throws Exception;
+	public void insertInfoSiteState(final String type,final SiteInfo siteInfo) throws Exception;
 	
 	public String selectEventStartTime(String number,String type) throws Exception;
 	
@@ -37,4 +37,21 @@ public interface AlarmDao {
 	 * 查询报警信息
 	 */
 	public List<AlarmInfo>  queryAlarmInfoList(String startTime,String endTime,String isFlag,PageInfo pageinfo);
+	
+	/**
+	 * 地图界面实时查询报警信息
+	 */
+	public List<AlarmInfo> getMapState();
+	/**
+	 * 界面DUPS实时查询报警信息
+	 */
+	public List<AlarmInfo> getMapDupsState();
+	/**
+	 * 界面AUPS实时查询报警信息
+	 */
+	public List<AlarmInfo> getMapAupsState();
+	/**
+	 * 实时查询路由器通信状态良好的站点
+	 */
+	public List<SiteInfo> queryRouteGoodStation() throws Exception;
 }

@@ -34,7 +34,7 @@ import com.highfd.siteUser.model.SiteInfo;
 	
 		 //创建记录时，用的id
 		public int getNextID(JdbcTemplate jdbcTemplate, String sql){
-			@SuppressWarnings({ "unchecked", "rawtypes" })
+			@SuppressWarnings({ "unchecked" })
 			Integer obj = (Integer) jdbcTemplate.query(sql,new ResultSetExtractor() {
 						public Object extractData(ResultSet rs) throws SQLException, DataAccessException {
 							if (rs.next()) {
@@ -46,7 +46,7 @@ import com.highfd.siteUser.model.SiteInfo;
 			return obj;
 		}
 
-		@SuppressWarnings({ "unchecked", "rawtypes" })
+		@SuppressWarnings({ "unchecked", })
 		public List<SiteInfo> getSiteUrl(String type){
 			
 			String sql = "select SITE_NAME,SITE_NUMBER,SITE_GNSS_IP,SITE_ROUTER_IP from SITE_INFO t order by site_number ";
@@ -65,9 +65,32 @@ import com.highfd.siteUser.model.SiteInfo;
 		}
 		
 		
-		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public void insertInfoSiteState(final SiteInfo siteInfo) throws Exception {//状态入库
-			String sql = "INSERT INTO SITE_INFO_STATE (SITENUMBER,ROUTE_STATE,aups_state,dups_state,SITE_DATE)"
+		@SuppressWarnings("unchecked")
+		public void insertInfoSiteState(final String type,final SiteInfo siteInfo) throws Exception {//状态入库
+			String sql = "INSERT INTO SITE_"+type+"_STATE (SITE_NUMBER,SITE_STATE,SITE_DATE)"
+					+ "VALUES(?,?,?)";
+			//String sql2 = "select recruit_data_SEQ.nextval from dual";
+			//data.setId(getNextID(jdbcTemplate, sql2)+"");
+			jdbcTemplate.execute(sql, new PreparedStatementCallback() {
+				public Object doInPreparedStatement(PreparedStatement pstmt) throws SQLException, DataAccessException {
+					pstmt.setString(1, siteInfo.getSiteNumber());
+					if(type.indexOf("info")>-1){
+						pstmt.setInt(2, siteInfo.getRouteState());
+					}else if(type.indexOf("aups")>-1){
+						pstmt.setInt(2, siteInfo.getAupsState());
+					}else if(type.indexOf("dups")>-1){
+						pstmt.setInt(2, siteInfo.getDupsState());
+					}
+					pstmt.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
+					pstmt.execute();
+					return null;
+				}
+			});
+		}
+
+		@SuppressWarnings({ "unchecked" })
+		public void insertInfoSiteState2(final SiteInfo siteInfo) throws Exception {//状态入库
+			String sql = "INSERT INTO SITE_INFO_STATE (SITE_NUMBER,ROUTE_STATE,aups_state,dups_state,SITE_DATE)"
 					+ "VALUES(?,?,?,?,?)";
 			//String sql2 = "select recruit_data_SEQ.nextval from dual";
 			//data.setId(getNextID(jdbcTemplate, sql2)+"");
@@ -109,7 +132,7 @@ import com.highfd.siteUser.model.SiteInfo;
 		 */
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		public void insertEventInfo(final AlarmInfo ai) throws Exception {
-			String sql = "INSERT INTO EVENT_INFO (id,sitenumber,deviceid,eventtype,starttime)"
+			String sql = "INSERT INTO EVENT_INFO (id,sitenumber,description,eventtype,starttime)"
 					+ "VALUES(EVENT_INFO_SEQ.nextval,?,?,?,?)";
 			jdbcTemplate.execute(sql, new PreparedStatementCallback() {
 				public Object doInPreparedStatement(PreparedStatement pstmt)
@@ -280,5 +303,83 @@ import com.highfd.siteUser.model.SiteInfo;
 		}
 		
 		
+
+		/**
+		 * 界面实时查询报警信息
+		 */
+		@SuppressWarnings("unchecked")
+		public List<AlarmInfo> getMapState() {
+			String sql = "select c.site_name,a.site_state from site_info_state a ,(select s.site_number as siteNum,max(s.site_date) as dates from site_info_state s group by s.site_number) b, site_info c where a.site_number=b.siteNum and a.site_date=b.dates and a.site_number=c.site_number and  a.site_number not like '%-ZL'";
+			List<AlarmInfo> list = jdbcTemplate.query(sql,new RowMapper() {
+				public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+					AlarmInfo info = new AlarmInfo();
+					info.setName(rs.getString("site_name"));
+					info.setSiteState(rs.getString("site_state"));
+					return info;
+				}
+			});
+			return list;
+		}
+		
+		
+		/**
+		 * 界面AUPS实时查询报警信息
+		 */
+		@SuppressWarnings("unchecked")
+		public List<AlarmInfo> getMapAupsState() {
+			String sql = "select s.site_name,d.site_state from site_info s left join (select a.site_number,a.site_state from site_aups_state a ,(select s.site_number as siteNum,max(s.site_date) as dates from site_aups_state s group by s.site_number) b where a.site_number=b.siteNum and a.site_date=b.dates ) d on s.site_number=d.site_number";
+			List<AlarmInfo> list = jdbcTemplate.query(sql,new RowMapper() {
+				public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+					AlarmInfo info = new AlarmInfo();
+					info.setName(rs.getString("site_name"));
+					if(null==rs.getString("site_state")){
+						info.setSiteState("11");
+					}else{
+						info.setSiteState(rs.getString("site_state"));
+					}
+					
+					return info;
+				}
+			});
+			return list;
+		}
+		/**
+		 * 界面DUPS实时查询报警信息
+		 */
+		@SuppressWarnings("unchecked")
+		public List<AlarmInfo> getMapDupsState() {
+			String sql = "select s.site_name,d.site_state from site_info s left join (select a.site_number,a.site_state from site_dups_state a ,(select s.site_number as siteNum,max(s.site_date) as dates from site_dups_state s group by s.site_number) b where a.site_number=b.siteNum and a.site_date=b.dates ) d on s.site_number=d.site_number";
+			List<AlarmInfo> list = jdbcTemplate.query(sql,new RowMapper() {
+				public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+					AlarmInfo info = new AlarmInfo();
+					info.setName(rs.getString("site_name"));
+					if(null==rs.getString("site_state")){
+						info.setSiteState("11");
+					}else{
+						info.setSiteState(rs.getString("site_state"));
+					}
+					
+					return info;
+				}
+			});
+			return list;
+		}
+		
+		/**
+		 * 实时查询路由器通信状态良好的站点
+		 */
+		@SuppressWarnings("unchecked")
+		public List<SiteInfo> queryRouteGoodStation() throws Exception {
+			String sql = "select s.site_acups_ip,s.site_dcups_ip,d.site_number from SITE_INFO_STATE d,site_info s,(select t.site_number,max(t.site_date) as maxDate from SITE_INFO_STATE t where sysdate-t.site_date<=60/24  group by t.site_number) m where m.site_number=s.site_number and d.site_number=m.site_number and d.site_date=m.maxDate and d.site_state!=22";
+			return (List<SiteInfo>) jdbcTemplate.query(sql, new RowMapper() {
+				public Object mapRow(ResultSet rs, int arg1) throws SQLException {
+					SiteInfo siteInfo = new SiteInfo();
+					siteInfo.setSiteNumber(rs.getString("site_number"));
+					siteInfo.setAcupsIp(rs.getString("site_acups_ip"));
+					siteInfo.setDcupsIp(rs.getString("site_dcups_ip"));
+					return siteInfo;
+				}
+			});
+		}
+
 	}
-	

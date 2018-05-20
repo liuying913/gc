@@ -88,7 +88,7 @@ public class CrawTimerDAOImpl implements CrawTimerDAO{
 	
 	@SuppressWarnings("unchecked")
 	public void insertInfoSiteState(final int siteState,final String siteNumber) throws Exception {//状态入库
-		String sql = "INSERT INTO SITE_INFO_STATE (sitenumber,SITE_STATE,SITE_DATE)"
+		String sql = "INSERT INTO SITE_INFO_STATE (site_number,SITE_STATE,SITE_DATE)"
 				+ "VALUES(?,?,?)";
 		//String sql2 = "select recruit_data_SEQ.nextval from dual";
 		//data.setId(getNextID(jdbcTemplate, sql2)+"");

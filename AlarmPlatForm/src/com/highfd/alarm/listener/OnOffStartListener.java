@@ -40,7 +40,6 @@ public class OnOffStartListener implements UpdateListener {
 			ai.setAlarmId(alarmId);//报警标示
 			ai.setSiteNumber(newEvents[0].get("siteNumber").toString());//台站编号
 			ai.setName(newEvents[0].get("name").toString());//报警中文名称
-			//System.out.println(ai.getSiteNumber().trim()+"))))))))))"+ ai.getAlarmId().trim());
 			
 			try {
 				AlarmDao alarmDao=(AlarmDaoImpl)ContextUtils.context.getBean("AlarmDaoImpl");

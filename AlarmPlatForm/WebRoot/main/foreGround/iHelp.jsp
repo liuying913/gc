@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--  ==顶部==  -->
 	<%@ include file="../../head.jsp" %>
 	
-    <div class="banner_son">
+     <div class="banner_son">
 		<img src="/AlarmPlatForm/img/img_zxjj.jpg" />
     </div>
     <!--  ==========  -->
@@ -29,9 +29,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页></a><a href="#" class="onactive">帮助</a></div>
         </div>
         <!--左边导航-->
-		</br>
-        真正建设中</br></br></br></br></br></br></br></br></br></br></br></br></br>
-		</br></br></br></br></br></br></br></br></br></br></br></br></br>
+		<br>
+        真正建设中<br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
     <!--  ==========  -->
 	<!--  = 底部 =  -->

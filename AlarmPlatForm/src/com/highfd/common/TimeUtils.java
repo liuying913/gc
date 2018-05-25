@@ -20,12 +20,10 @@ public class TimeUtils {
 	}
 	
 	
-	public static String get_FTP_EarthQuake_UserName(){
+	public static String getNowTime(){
 		  Date d = new Date();  
-	      System.out.println(d);  
 	      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
-	      String dateNowStr = sdf.format(d).replaceAll("-", "").replaceAll(":", "").replaceAll(" ", "");
-	      System.out.println("格式化后的日期：" + dateNowStr);
+	      String dateNowStr = sdf.format(d);
 	      return dateNowStr;
 	}
 	

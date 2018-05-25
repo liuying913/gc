@@ -104,7 +104,7 @@ public class SiteUserController {
 		String searchParam = request.getParameter("searchParam");
 		List<SiteInfo> siteInfoList = siteUserService.getSiteInfoList(searchParam);
 		
-		String fileName="报警数据";
+		String fileName="台站数据";
 	     // 生成提示信息，
 	     response.setContentType("application/vnd.ms-excel");
 	     String codedFileName = null;

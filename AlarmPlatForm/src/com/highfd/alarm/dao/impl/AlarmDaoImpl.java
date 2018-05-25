@@ -18,6 +18,7 @@ import com.highfd.alarm.model.AlarmInfo;
 import com.highfd.common.PageInfo;
 import com.highfd.common.TimeUtils;
 import com.highfd.siteUser.model.SiteInfo;
+import com.highfd.sys.controller.OnlyOneController;
 
 	public class AlarmDaoImpl implements AlarmDao{
 		
@@ -370,7 +371,7 @@ import com.highfd.siteUser.model.SiteInfo;
 		 */
 		@SuppressWarnings("unchecked")
 		public List<SiteInfo> queryRouteGoodStation() throws Exception {
-			String sql = "select s.site_acups_ip,s.site_dcups_ip,d.site_number from SITE_INFO_STATE d,site_info s,(select t.site_number,max(t.site_date) as maxDate from SITE_INFO_STATE t where sysdate-t.site_date<=60/24  group by t.site_number) m where m.site_number=s.site_number and d.site_number=m.site_number and d.site_date=m.maxDate and d.site_state!=22";
+			String sql = "select s.site_acups_ip,s.site_dcups_ip,d.site_number from SITE_INFO_STATE d,site_info s,(select t.site_number,max(t.site_date) as maxDate from SITE_INFO_STATE t where sysdate-t.site_date<="+OnlyOneController.adup_dups_time+"  group by t.site_number) m where m.site_number=s.site_number and d.site_number=m.site_number and d.site_date=m.maxDate and d.site_state!=22";
 			return (List<SiteInfo>) jdbcTemplate.query(sql, new RowMapper() {
 				public Object mapRow(ResultSet rs, int arg1) throws SQLException {
 					SiteInfo siteInfo = new SiteInfo();

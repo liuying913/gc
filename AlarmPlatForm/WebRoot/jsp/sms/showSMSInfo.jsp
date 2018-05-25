@@ -74,11 +74,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<%@ include file="../../head.jsp" %>
     <div class="banner_son">
-		<img src="/AlarmPlatForm/img/img_zxjj.jpg" style="margin:-350px 0px;"/>
+		<img src="/AlarmPlatForm/img/img_zxjj.jpg" />
     </div>
   <div id="iframeheight">
   		<div class="pbox tspbox">
-		<div class="ContactUs-header" style="margin: 20px auto 0;width:1200px;">
+		<div class="ContactUs-header" style="margin: 0px auto 0;width:1200px;">
             <div class="header-tit">短信明细</div>
             <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页&gt;</a><a href="/AlarmPlatForm/skip.action?pageName=smsList" class="onactive">短信查询</a></div>
         </div>

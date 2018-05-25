@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.highfd.sys.controller.OnlyOneController;
+
 public class SqlServerCon {
     final static String cfn = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     final static String url = "jdbc:sqlserver://172.128.8.82:1433;DatabaseName=TPPDB";
@@ -23,13 +25,17 @@ public class SqlServerCon {
         PreparedStatement statement = null;
         ResultSet res = null;
         try {
-            Class.forName(cfn);
-            con = DriverManager.getConnection(url,"test","Trimble123456");
-            String sql = "SELECT  s.m_StationName,h.logT FROM testDB1.TPPDB.dbo.StationList s left join  " +
-                "(SELECT Configuration,max(LogTime) as logT FROM testDB1.TPPDB.dbo.MeteorologicSensorHistory  where " +
-                "datediff(ss,LogTime,getdate()) <= (60*60*8+150) group by Configuration ) h  " +
+            Class.forName(OnlyOneController.SqlserverDriverClassName);
+            con = DriverManager.getConnection(OnlyOneController.SqlserverUrl,OnlyOneController.SqlserverUsername,OnlyOneController.SqlserverPassword);
+            String sql = "SELECT  s.m_StationName,h.logT FROM StationList s left join  " +
+                "(SELECT Configuration,max(LogTime) as logT FROM MeteorologicSensorHistory  where " +
+                "datediff(ss,LogTime,getdate()) <= ("+OnlyOneController.trimble_time+") group by Configuration ) h  " +
              "on s.m_StationName=h.Configuration";
-            //System.out.println(sql);
+            
+           /* String sql = "SELECT  s.m_StationName,h.logT FROM testDB1.TPPDB.dbo.StationList s left join  " +
+            "(SELECT Configuration,max(LogTime) as logT FROM testDB1.TPPDB.dbo.MeteorologicSensorHistory  where " +
+            "datediff(ss,LogTime,getdate()) <= ("+OnlyOneController.trimble_time+") group by Configuration ) h  " +
+         "on s.m_StationName=h.Configuration";*/
             statement = con.prepareStatement(sql);
             res = statement.executeQuery();
             while(res.next()){

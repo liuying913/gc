@@ -132,7 +132,7 @@ public class SmsSendSearchController {
 	         style.setAlignment(CellStyle.ALIGN_CENTER); // 居中
 	         
 	         //产生工作表对象  
-	         Sheet sheet = workbook.createSheet("短信发送数据"); 
+	         Sheet sheet = workbook.createSheet("短信数据"); 
 	         int rowNumber = 0;//行序列
 	         //标题
 	         Row upRow = sheet.createRow(rowNumber++);//创建标题行

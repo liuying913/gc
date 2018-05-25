@@ -103,7 +103,7 @@ public class AlarmSearchController {
 				fileName +="未结束";
 			}
 		}
-		fileName +="AlarmData";
+		fileName +="报警数据";
 	     // 生成提示信息，
 	     response.setContentType("application/vnd.ms-excel");
 	     String codedFileName = null;

@@ -17,7 +17,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<%@ include file="../../head.jsp" %>
 	
 	
-	<div class="banner_son"></div>
+	<div class="banner_son">
+		<img src="/AlarmPlatForm/img/img_zxjj.jpg" />
+    </div>
     <!--  ==========  -->
     <!--  ==页面主体==  -->
     <!--  ==========  -->

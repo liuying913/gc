@@ -66,13 +66,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<%@ include file="../../head.jsp" %>
 	
-    <div class="banner_son">
-		<img src="/AlarmPlatForm/img/img_zxjj.jpg" style="margin:-350px 0px;"/>
+   <div class="banner_son">
+		<img src="/AlarmPlatForm/img/img_zxjj.jpg" />
     </div>
     
   <div id="iframeheight">
   		<div class="pbox tspbox">
-			<div class="ContactUs-header" style="margin: 20px auto 0;width:1200px;">
+			<div class="ContactUs-header" style="margin: 0px auto 0;width:1200px;">
             <div class="header-tit">报警查询</div>
             <div class="header-nav"><a href="/AlarmPlatForm/skip.action?pageName=1">主页&gt;</a><a href="/AlarmPlatForm/skip.action?pageName=alarmList" class="onactive">报警查询</a></div>
         </div>
@@ -156,7 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				})
 			</script>
            <div style="min-height: 160px;text-align:center;width:1200px;margin:0 auto;" >
-			   <table width="80%" border="0" cellspacing="0" cellpadding="0" class="table01" style="text-align:center;table-layout:fixed;">
+			   <table width="80%" border="0" cellspacing="0" cellpadding="0" class="table01" style="text-align:center;">
 				   <tr>
 					   <th style="white-space: nowrap;width:80px;">序号</th>
 					   <th style="white-space: nowrap;">所属省份</th>

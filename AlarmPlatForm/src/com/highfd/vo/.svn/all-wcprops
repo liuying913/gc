@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo
+END
+JsonBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/JsonBean.java
+END
+CellParam.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/CellParam.java
+END
+SaveXMLParam.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/SaveXMLParam.java
+END
+DimIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/DimIndex.java
+END
+ItemVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/ItemVO.java
+END
+RecruitData.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/RecruitData.java
+END
+CrawlResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/CrawlResult.java
+END
+DimUnit.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/DimUnit.java
+END
+Data.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/Data.java
+END
+ItemListParam.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/ItemListParam.java
+END
+CrawlStepsBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/CrawlStepsBean.java
+END
+ConfigInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/ConfigInfo.java
+END
+DimSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/DimSource.java
+END
+RecruitItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/RecruitItem.java
+END
+MailInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/MailInfo.java
+END
+Item.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/vo/Item.java
+END

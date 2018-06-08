@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model
+END
+SiteSMSInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/SiteSMSInfo.java
+END
+SMSLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/SMSLog.java
+END
+EventFlag.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/EventFlag.java
+END
+SitePerson.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/SitePerson.java
+END
+UserPower.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/UserPower.java
+END
+EventInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/EventInfo.java
+END
+GroupAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/GroupAuth.java
+END
+SmsInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sms/model/SmsInfo.java
+END

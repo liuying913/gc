@@ -1,0 +1,34 @@
+driverClassName=oracle.jdbc.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:orcl
+username=gc
+password=gc
+maxActive=20000
+maxIdle=2000
+maxWait=6000000
+
+
+SqlserverDriverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+SqlserverUrl=jdbc:sqlserver://192.168.1.103:1433;DatabaseName=TPPDB
+SqlserverUsername=test
+SqlserverPassword=Trimble123456
+
+
+#端口号
+SMSPoint=1
+
+#aups、dups查询接收机状态时候， 查询的时间长度
+#1/24(1小时)
+adup_dups_time=2/24/60*10000  
+
+#读取Trimble数据库中数据 ， 查询的时间长度
+#8小时的时间差 + 最近150秒钟
+trimble_time=60*60*8+15000000000
+
+#o文件的根目录
+oFileRootPath=G\:\\11111
+oFileRootPath_Linux=/root/nfs
+
+#sms短信报警模块 短信猫是否正常启动
+smsRunFlag=true
+#几周仍未回复的报警
+weekNum=2

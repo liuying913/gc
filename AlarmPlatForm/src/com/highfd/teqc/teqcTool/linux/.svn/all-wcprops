@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux
+END
+ConnectionSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/ConnectionSource.java
+END
+StaticConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/StaticConstant.java
+END
+PropertyHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/PropertyHelper.java
+END
+Z_TEQC_LINUX.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/Z_TEQC_LINUX.java
+END
+GpsWeek.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/GpsWeek.java
+END
+StaticUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/StaticUtil.java
+END
+DataStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/DataStore.java
+END
+DataServiceSQLException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/DataServiceSQLException.java
+END
+DataServiceRuntimeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/teqc/teqcTool/linux/DataServiceRuntimeException.java
+END

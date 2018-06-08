@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common
+END
+Crawler.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/Crawler.java
+END
+getUrlXML2.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/getUrlXML2.java
+END
+IpCheck.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/IpCheck.java
+END
+TimeCommon.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/TimeCommon.java
+END
+CopyFileUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/CopyFileUtil.java
+END
+JavaXMLWrite.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/JavaXMLWrite.java
+END
+GetXMLPath.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/GetXMLPath.java
+END
+ConvertDateTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/ConvertDateTest.java
+END
+SaveExcelFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/SaveExcelFile.java
+END
+Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/Test.java
+END
+TimeUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/TimeUtils.java
+END
+SiteInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/SiteInfo.java
+END
+getUrlXML.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/getUrlXML.java
+END
+ZLZPBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/ZLZPBean.java
+END
+WorkYears.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/WorkYears.java
+END
+PageInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/PageInfo.java
+END
+FileCommon.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/FileCommon.java
+END
+PingUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/PingUtil.java
+END
+JsonTest2.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/JsonTest2.java
+END
+Degree.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/Degree.java
+END
+SendMail.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/SendMail.java
+END
+JavaXMLRead.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/common/JavaXMLRead.java
+END

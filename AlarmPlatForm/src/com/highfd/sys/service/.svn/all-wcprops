@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sys/service
+END
+ItemService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sys/service/ItemService.java
+END
+HighFDService.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sys/service/HighFDService.java
+END
+CrawTimerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/LiuYing/!svn/ver/8/AlarmPlatForm/AlarmPlatForm/src/com/highfd/sys/service/CrawTimerService.java
+END
